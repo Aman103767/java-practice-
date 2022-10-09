@@ -1,5 +1,18 @@
 package UseCases;
 
-public class DepositUseCase {
+import java.util.Scanner;
 
+import com.masai.dao.AccountDao;
+import com.masai.dao.AccountDaoImpl;
+
+public class DepositUseCase {
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter the amount");
+	int amount = input.nextInt();
+	System.out.println("Enter the account id ");
+	int id = input.nextInt();
+	AccountDao ad = new AccountDaoImpl();
+	System.out.println(ad.deposit(amount, id));
+}
 }
