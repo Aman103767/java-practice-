@@ -12,7 +12,7 @@ import com.masai.bean.Account;
 public class Demo {
 public static void main(String[] args) {
 	EntityManager em = Utility.provideConnection();
-    String jpql = "select name, balance from Account where accountId = 2";
+    String jpql = "select name, balance from Account where accountId = 1 ";
     TypedQuery<Object[]> q  = em.createQuery(jpql,Object[].class);
      Object [] obj =  q.getSingleResult();
     

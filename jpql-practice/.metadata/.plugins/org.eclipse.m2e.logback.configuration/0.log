@@ -190,3 +190,14 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag not
 2022-10-13 06:56:41,896 [Worker-37: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-10-13 06:56:41,897 [Worker-37: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-10-13 06:56:41,899 [Worker-37: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 07:06:13,346 [Worker-51: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:06:13,351 [Worker-51: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 07:06:13,354 [Worker-51: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:06:13,355 [Worker-51: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 07:07:03,421 [Worker-47: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:07:03,426 [Worker-47: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 07:07:03,429 [Worker-47: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:07:03,431 [Worker-47: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 07:07:51,078 [Worker-53: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:07:51,081 [Worker-53: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 07:07:51,083 [Worker-53: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
