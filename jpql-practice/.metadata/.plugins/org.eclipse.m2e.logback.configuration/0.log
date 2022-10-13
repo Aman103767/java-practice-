@@ -186,3 +186,7 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag not
 2022-10-13 06:54:14,128 [Worker-42: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-10-13 06:54:14,131 [Worker-42: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-10-13 06:54:14,134 [Worker-42: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 06:56:41,893 [Worker-37: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 06:56:41,896 [Worker-37: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 06:56:41,897 [Worker-37: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 06:56:41,899 [Worker-37: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

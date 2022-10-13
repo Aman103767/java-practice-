@@ -561,3 +561,9 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag not
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-10-13 06:54:14.133
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-10-13 06:56:41.894
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-10-13 06:56:41.898
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

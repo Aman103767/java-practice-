@@ -13,7 +13,7 @@ public class Demo {
 public static void main(String[] args) {
 	EntityManager em = Utility.provideConnection();
     String jpql = "select name, balance from Account where name = 'aman'";
-    Query q = em.createQuery(jpql,Object[].class);
+    Query q = em.createQuery(jpql);
     List<Object[]> list = q.getResultList();
     for(Object[] obj : list) {
     	System.out.println((String)obj[0]);
