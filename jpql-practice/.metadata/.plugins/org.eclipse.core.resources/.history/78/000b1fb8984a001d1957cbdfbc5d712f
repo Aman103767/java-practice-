@@ -13,7 +13,7 @@ public class Demo {
 public static void main(String[] args) {
 	EntityManager em = Utility.provideConnection();
    
-    TypedQuery<Object[]> q  = em.createNamedQuery("find",Object[].class);
+    TypedQuery<Object[]> q  = em.createQuery("find",Object[].class);
      Object [] obj =  q.getSingleResult();
     
     	System.out.println((String)obj[0]);

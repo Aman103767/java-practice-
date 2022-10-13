@@ -201,3 +201,12 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag not
 2022-10-13 07:07:51,078 [Worker-53: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-10-13 07:07:51,081 [Worker-53: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-10-13 07:07:51,083 [Worker-53: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:07:51,085 [Worker-53: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 07:15:09,053 [Worker-58: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:15:09,056 [Worker-58: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 07:15:09,058 [Worker-58: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:15:09,060 [Worker-58: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-13 07:15:30,358 [Worker-54: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:15:30,361 [Worker-54: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-10-13 07:15:30,362 [Worker-54: Launching Demo] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 07:15:30,365 [Worker-54: Launching Demo] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
