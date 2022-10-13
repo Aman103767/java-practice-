@@ -1,5 +1,20 @@
 package com.masai.model;
 
-public class Insert {
+import javax.persistence.EntityManager;
 
+import com.masai.Utility.Utility;
+import com.masai.bean.Account;
+
+public class Insert {
+public static void main(String[] args) {
+	EntityManager em= Utility.provideConnection();
+	Account acc  = new Account();
+	acc.setName("aman");
+	acc.setBalance(2000);
+	em.getTransaction().begin();
+	em.persist(acc);
+	em.getTransaction().commit();
+	
+	em.close();
+}
 }

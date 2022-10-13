@@ -1,0 +1,24 @@
+package com.masai.model;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import com.masai.Utility.Utility;
+import com.masai.bean.Account;
+
+public class Demo {
+public static void main(String[] args) {
+	EntityManager em = Utility.provideConnection();
+    String jpql = "from Account where name = 'aman'";
+    TypedQuery<Account> q = em.createQuery(jpql,Account.class);
+    List<Account> list = q.getResultList();
+    list.forEach(s->System.out.println(s));
+    
+    
+    em.close();
+   
+}
+}
