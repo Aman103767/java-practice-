@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\aman1\OneDrive\Desktop\pratice\java-practice-\jpql-practice\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2652811419.index
+3921240090.index

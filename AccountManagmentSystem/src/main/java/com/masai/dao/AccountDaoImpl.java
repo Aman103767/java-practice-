@@ -105,7 +105,29 @@ public class AccountDaoImpl implements AccountDao{
 	@Override
 	public String deposit(double amount, int accountId) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		String mess = "your amount is not deposit";
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("accountUnit");
+		EntityManager em = emf.createEntityManager();
+		Account acc = em.find(Account.class , accountId);
+		
+		if(acc != null) {
+			
+
+			em.getTransaction().begin();
+			 
+				  acc.setBalance(acc.getBalance()+amount);
+				  mess = "your amount is successfully deposit"; 
+			  
+		      em.getTransaction().commit();
+			
+		}
+      
+		em.close();
+		
+		
+		return mess;
 	}
 
 }
