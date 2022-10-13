@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Account.java&apos; to &apos;Jpql/src/main/java/com.masai.bean&apos;&#x0D;&#x0A;- Original project: &apos;Jpql&apos;&#x0D;&#x0A;- Destination element: &apos;Jpql/src/main/java/com.masai.bean&apos;&#x0D;&#x0A;- Original element: &apos;com.masai.Utility.Account.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.masai.bean" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.masai.Utility{Account.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1665621782868" units="1" version="1.0"/>
+</session>
