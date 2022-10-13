@@ -2,19 +2,21 @@ package com.masai.model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.masai.Utility.Utility;
+import com.masai.bean.Account;
 
 public class Demo {
 public static void main(String[] args) {
 	EntityManager em = Utility.provideConnection();
-    String jpql = "update Account set balance = balance+?1 where name = ?2";
-    Query q = em.createQuery(jpql);
-    q.setParameter(1,1000);
-    q.setParameter(2,"aman");
-    em.getTransaction().begin();
-    int x = q.executeUpdate();
-    em.getTransaction().commit();
-    System.out.println(x + " rows updated");
+    String jpql = "from Account where name = 'aman'";
+    TypedQuery<Account> q = em.createQuery(jpql,Account.class);
+    Account p  = q.getSingleResult();
+    System.out.println(p);
+    
+    
+    em.close();
+   
 }
 }
