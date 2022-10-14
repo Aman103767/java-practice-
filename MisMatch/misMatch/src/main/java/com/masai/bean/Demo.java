@@ -26,8 +26,7 @@ public static void main(String[] args) {
 	dm.getEmp().add(em2);
 	
 	em.getTransaction().begin();
-	em.persist(em1);
-	em.persist(em2);
+	
 	em.persist(dm);
 	em.getTransaction().commit();
 	em.close();
