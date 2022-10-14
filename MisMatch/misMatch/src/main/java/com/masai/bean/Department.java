@@ -22,7 +22,7 @@ public class Department {
 	
 	@Override
 	public String toString() {
-		return "Department [deptId=" + deptId + ", dname=" + dname + ", location=" + location + ", emp=" + emp + "]";
+		return "Department [deptId=" + deptId + ", dname=" + dname + ", location=" + location +  "]";
 	}
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "dept_emp",joinColumns = @JoinColumn(name = "did"),inverseJoinColumns = @JoinColumn(name="empid" ))
@@ -30,6 +30,14 @@ public class Department {
 
 	public int getDeptId() {
 		return deptId;
+	}
+
+	public List<Employee> getEmp() {
+		return emp;
+	}
+
+	public void setEmp(List<Employee> emp) {
+		this.emp = emp;
 	}
 
 	public void setDeptId(int deptId) {
@@ -44,14 +52,7 @@ public class Department {
 		this.dname = dname;
 	}
 
-	public List<Employee> getEmp() {
-		return emp;
-	}
-
-	public void setEmp(List<Employee> emp) {
-		this.emp = emp;
-	}
-
+	
 	public String getLocation() {
 		return location;
 	}

@@ -1,10 +1,13 @@
 
 package com.masai.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Employee {
@@ -14,10 +17,20 @@ public class Employee {
 private int empId;
 @Override
 public String toString() {
-	return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + "]";
+	return "Employee [empId=" + empId + ", name=" + name + ", salary=" + salary + ", dept=" + dept + "]";
 }
 private String name;
 private int salary ;
+@ManyToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "did")
+private Department dept;
+
+public Department getDept() {
+	return dept;
+}
+public void setDept(Department dept) {
+	this.dept = dept;
+}
 public int getEmpId() {
 	return empId;
 }
