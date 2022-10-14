@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Department {
@@ -20,7 +21,7 @@ public class Department {
 	public String toString() {
 		return "Department [deptId=" + deptId + ", dname=" + dname + ", location=" + location + ", emp=" + emp + "]";
 	}
-
+    @OneToMany
 	private List<Employee> emp = new ArrayList<>();
 
 	public int getDeptId() {
