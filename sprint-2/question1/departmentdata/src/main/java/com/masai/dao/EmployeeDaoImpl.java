@@ -41,6 +41,13 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public void registerEmployeeTODepartment(int empId, int deptId) throws EmployeeException, DepartmentException {
 		// TODO Auto-generated method stub
+		EntityManager em= Util.provideEntityManager();
+		Employee emp  = em.find(Employee.class, empId);
+		Department dept = em.find(Department.class,deptId);
+		em.getTransaction().begin();
+		emp.setDept(dept);
+		em.getTransaction().commit();
+		em.close();
 		
 	}
 

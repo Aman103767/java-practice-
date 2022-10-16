@@ -17,8 +17,15 @@ public class Employee {
 	private int salary;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	Department dept;
+	private Department dept;
 	
+	public Department getDept() {
+		return dept;
+	}
+
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
 	@Embedded
 	private Address address;
 	public int getEmpId() {
