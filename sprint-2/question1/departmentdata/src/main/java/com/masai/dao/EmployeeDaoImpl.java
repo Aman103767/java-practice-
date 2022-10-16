@@ -17,9 +17,9 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		// TODO Auto-generated method stub
 	  EntityManager em = Util.provideEntityManager();
 	  
-	  em.getTransaction();
+	  em.getTransaction().begin();;
 	  em.persist(dept);
-	  em.getTransaction();
+	  em.getTransaction().commit();
 	  
 	  em.close();
 		

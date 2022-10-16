@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,8 +20,8 @@ public class Department {
 private String deptName;
  private String locaiton;
  
- @OneToMany(cascade = CascadeType.ALL)
- List<Department> employees = new ArrayList<>();
+ @OneToMany(cascade = CascadeType.ALL, mappedBy = "dept")
+ List<Employee> employees = new ArrayList<>();
  
 @Override
 public String toString() {
