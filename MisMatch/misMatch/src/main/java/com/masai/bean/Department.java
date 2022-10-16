@@ -24,8 +24,8 @@ public class Department {
 	public String toString() {
 		return "Department [deptId=" + deptId + ", dname=" + dname + ", location=" + location +  "]";
 	}
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "dept_emp",joinColumns = @JoinColumn(name = "did"),inverseJoinColumns = @JoinColumn(name="empid" ))
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "dept")
+    //@JoinTable(name = "dept_emp",joinColumns = @JoinColumn(name = "did"),inverseJoinColumns = @JoinColumn(name="empid" ))
 	private List<Employee> emp = new ArrayList<>();
 
 	public int getDeptId() {
