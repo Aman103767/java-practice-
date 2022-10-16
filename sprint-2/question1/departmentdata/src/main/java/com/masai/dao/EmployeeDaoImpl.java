@@ -28,6 +28,13 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public void addEmployee(Employee emp) {
 		// TODO Auto-generated method stub
+		  EntityManager em = Util.provideEntityManager();
+		  
+		  em.getTransaction().begin();;
+		  em.persist(emp);
+		  em.getTransaction().commit();
+		  
+		  em.close();
 		
 	}
 

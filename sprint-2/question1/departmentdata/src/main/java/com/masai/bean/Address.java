@@ -5,6 +5,15 @@ public class Address {
 	private String city;
 	private String state;
 	private String pincode;
+	public Address() {
+		
+	}
+	public Address(String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+		this.city = string;
+		this.state = string2;
+		this.pincode = string3;
+	}
 	@Override
 	public String toString() {
 		return "Address [city=" + city + ", state=" + state + ", pincode=" + pincode + "]";
