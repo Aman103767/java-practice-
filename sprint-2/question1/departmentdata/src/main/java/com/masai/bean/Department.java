@@ -33,6 +33,12 @@ public int getDeptId() {
 public void setDeptId(int deptId) {
 	this.deptId = deptId;
 }
+public List<Employee> getEmployees() {
+	return employees;
+}
+public void setEmployees(List<Employee> employees) {
+	this.employees = employees;
+}
 public String getDeptName() {
 	return deptName;
 }

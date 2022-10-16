@@ -16,7 +16,7 @@ public static void main(String[] args) {
     EmployeeDao ed = new EmployeeDaoImpl();
     try {
 		List<Employee> list = ed.getAllEmployeeWithDeptName(name);
-		list.forEach(s-> System.out.println(s));
+		list.forEach(s->System.out.println(s));
 	} catch (EmployeeException e) {
 		// TODO Auto-generated catch block
 		System.out.println(e.getMessage());

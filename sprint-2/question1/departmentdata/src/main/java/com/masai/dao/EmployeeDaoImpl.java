@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.masai.bean.Department;
 import com.masai.bean.Employee;
@@ -63,23 +64,37 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Override
 	public List<Employee> getAllEmployeeWithDeptName(String deptName) throws EmployeeException {
 		// TODO Auto-generated method stub'
+		List<Employee> emp = null;
 		EntityManager em= Util.provideEntityManager();
-		String jpql = "from department from where deptName = :dn";
+		String jpql = "from Department where deptName = :dn";
 		Query q = em.createQuery(jpql);
 		q.setParameter("dn", deptName);
-		List<Employee> list = q.getResultList();
+		List<Department> list = q.getResultList();
+		//System.out.println(list);
+		for(Department d : list) {
+			emp =  d.getEmployees();
+		}
+		
 	    if(list.size() ==  0) {
 	    	throw new EmployeeException("employee not found");
 	    }
 		
-		
-		return list;
+		return emp;
+
 	}
 
 	@Override
 	public Department getDepartmentDetailsByEmployeeId(int empId) throws DepartmentException {
 		// TODO Auto-generated method stub
-		return null;
+		Department d = null;
+		EntityManager em= Util.provideEntityManager();
+	      Employee emp =  em.find(Employee.class, empId);
+	         
+	  if(emp == null ) {
+		  throw new DepartmentException("employee not find in this department");
+	  }
+	  d = emp.getDept();
+		return d;
 	}
 	
 	
