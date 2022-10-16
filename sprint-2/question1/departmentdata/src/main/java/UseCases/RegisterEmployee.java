@@ -20,10 +20,10 @@ public static void main(String[] args) {
 		em.registerEmployeeTODepartment(empid, deptid);
 	} catch (EmployeeException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+	    System.out.println(e.getMessage());
 	} catch (DepartmentException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+	 System.out.println(e.getMessage());
 	}
 }
 }

@@ -3,6 +3,7 @@ package com.masai.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import com.masai.bean.Department;
 import com.masai.bean.Employee;
@@ -44,6 +45,14 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		EntityManager em= Util.provideEntityManager();
 		Employee emp  = em.find(Employee.class, empId);
 		Department dept = em.find(Department.class,deptId);
+		
+		if(emp == null) {
+			throw new EmployeeException("employee not found");
+		}
+		if(dept == null) {
+			throw new DepartmentException("department not found");
+		}
+		
 		em.getTransaction().begin();
 		emp.setDept(dept);
 		em.getTransaction().commit();
@@ -53,8 +62,18 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	public List<Employee> getAllEmployeeWithDeptName(String deptName) throws EmployeeException {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO Auto-generated method stub'
+		EntityManager em= Util.provideEntityManager();
+		String jpql = "from department from where deptName = :dn";
+		Query q = em.createQuery(jpql);
+		q.setParameter("dn", deptName);
+		List<Employee> list = q.getResultList();
+	    if(list.size() ==  0) {
+	    	throw new EmployeeException("employee not found");
+	    }
+		
+		
+		return list;
 	}
 
 	@Override
