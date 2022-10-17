@@ -32,8 +32,12 @@ public class Course {
 		return "Course [CourseId=" + CourseId + ", CourseName=" + CourseName + ", duration=" + duration + ", fee=" + fee
 				+ "]";
 	}
-	public void setCourseId(int courseId) {
-		CourseId = courseId;
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(List<Student> students) {
+		this.students = students;
 	}
 	public String getCourseName() {
 		return CourseName;

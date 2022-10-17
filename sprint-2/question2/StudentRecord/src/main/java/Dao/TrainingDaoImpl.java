@@ -28,6 +28,16 @@ public class TrainingDaoImpl implements TrainingDao{
 	@Override
 	public void registerStudent(Student student, int courseId) throws CourseException {
 		// TODO Auto-generated method stub
+	 EntityManager em = Utility.Utility.provideConnection();
+	 Course c = em.find(Course.class, courseId);
+	
+	 
+	 em.getTransaction().begin();
+	 student.getCourses().add(c);
+	 c.getStudents().add(student);
+	 em.persist(student);
+	 em.getTransaction().commit();
+	 em.close();
 		
 	}
 

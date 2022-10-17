@@ -21,9 +21,15 @@ public class Student {
 	private String mobile;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Course> students = new ArrayList<>();
+	private List<Course> courses = new ArrayList<>();
 	
-	public int getRoll() {
+		public List<Course> getCourses() {
+		return courses;
+	}
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+		public int getRoll() {
 		return roll;
 	}
 	public void setRoll(int roll) {
