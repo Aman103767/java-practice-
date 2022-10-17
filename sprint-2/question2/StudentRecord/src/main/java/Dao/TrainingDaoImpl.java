@@ -31,10 +31,10 @@ public class TrainingDaoImpl implements TrainingDao{
 	 EntityManager em = Utility.Utility.provideConnection();
 	 Course c = em.find(Course.class, courseId);
 	
-	 
-	 em.getTransaction().begin();
 	 student.getCourses().add(c);
 	 c.getStudents().add(student);
+	 
+	 em.getTransaction().begin();
 	 em.persist(student);
 	 em.getTransaction().commit();
 	 em.close();
