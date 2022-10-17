@@ -8,8 +8,8 @@ import javax.persistence.TypedQuery;
 
 import com.masai.bean.Department;
 import com.masai.bean.Employee;
-import com.masai.exception.DepartmentException;
-import com.masai.exception.EmployeeException;
+import com.masai.question1.DepartmentException;
+import com.masai.question1.EmployeeException;
 import com.masai.utility.Util;
 
 public class EmployeeDaoImpl implements EmployeeDao{

@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.masai.bean.Department;
 import com.masai.bean.Employee;
-import com.masai.exception.DepartmentException;
-import com.masai.exception.EmployeeException;
+import com.masai.question1.DepartmentException;
+import com.masai.question1.EmployeeException;
 
 public interface EmployeeDao {
 

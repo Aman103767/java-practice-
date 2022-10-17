@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.masai.dao.EmployeeDao;
 import com.masai.dao.EmployeeDaoImpl;
-import com.masai.exception.DepartmentException;
-import com.masai.exception.EmployeeException;
+import com.masai.question1.DepartmentException;
+import com.masai.question1.EmployeeException;
 
 public class RegisterEmployee {
 public static void main(String[] args) {
