@@ -29,16 +29,24 @@ public class TrainingDaoImpl implements TrainingDao{
 	public void registerStudent(Student student, int courseId) throws CourseException {
 		// TODO Auto-generated method stub
 	 EntityManager em = Utility.Utility.provideConnection();
-	 Course c = em.find(Course.class, courseId);
+	 Course c = em.find(Course.class, courseId);	
 	
-	 student.getCourses().add(c);
-	 c.getStudents().add(student);
-	 
-	 em.getTransaction().begin();
-	 em.persist(student);
-	 em.getTransaction().commit();
-	 em.close();
+	 if(c == null) {
+		 throw new CourseException("Course not found");
+	 }else {
+		 c.getStudents().add(student);
+		 student.getCourses().add(c);
 		
+		 
+	     em.getTransaction().begin();
+	     em.persist(student);
+		 
+		 em.getTransaction().commit();
+		 em.close();
+			
+	 }
+	// System.out.println(c);
+	
 	}
 
 	@Override
