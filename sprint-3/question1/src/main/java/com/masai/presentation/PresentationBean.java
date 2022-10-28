@@ -29,4 +29,8 @@ public class PresentationBean {
 	    
 	    empService.saveEmployee(e);
 	}
+	
+	public void printAllEmployee() {
+		empService.getAllEmployee().forEach(s->System.out.println(s));
+	}
 }
