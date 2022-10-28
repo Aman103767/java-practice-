@@ -49,13 +49,15 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 		// TODO Auto-generated method stub
 		String str = "Delete successfully";
 		EntityManager em = EMUtil.provideEM();
+		 
 	    Employee e = em.find(Employee.class, empId);
+	    if(e == null) {
+		    return "null";
+		    }
 	    em.getTransaction().begin();
 	    em.remove(e);
 	    em.getTransaction().commit();
-	    if(e == null) {
-	    	str = "null";
-	    }
+	   
 	    return str;
 	
 	}
