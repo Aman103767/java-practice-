@@ -22,13 +22,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List getAllEmployee() {
 		// TODO Auto-generated method stub
-		return null;
+		EmployeeRepo er = new EmployeeRepoImpl();
+	      return er.getAllEmployeeDetails();
+	    
 	}
 
 	@Override
 	public Employee getEmployeeById(int empId) throws EmployeeException {
 		// TODO Auto-generated method stub
-		return null;
+		EmployeeRepo er = new EmployeeRepoImpl();
+		Employee e =  er.findEmployee(empId);
+		if(e == null) {
+			throw new EmployeeException("employee not found");
+		}
+		
+		return e;
 	}
 
 	@Override

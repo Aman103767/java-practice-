@@ -38,8 +38,10 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 
 	@Override
 	public Employee findEmployee(int empId) {
-		// TODO Auto-generated method stub
-		return null;
+		// TODO Auto-generated method 
+        EntityManager em = EMUtil.provideEM();
+        Employee e = em.find(Employee.class,empId);
+		return e;
 	}
 
 	@Override

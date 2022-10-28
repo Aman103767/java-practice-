@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import com.masai.Repository.EmployeeRepo;
 import com.masai.Repository.EmployeeRepoImpl;
 import com.masai.bean.Employee;
+import com.masai.exception.EmployeeException;
 import com.masai.service.EmployeeService;
 @Controller(value = "p1")
 public class PresentationBean {
@@ -32,5 +33,17 @@ public class PresentationBean {
 	
 	public void printAllEmployee() {
 		empService.getAllEmployee().forEach(s->System.out.println(s));
+	}
+	
+	public void searchEmployee() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the employee id ");
+		int id = input.nextInt();
+		try {
+			System.out.println(empService.getEmployeeById(id));
+		} catch (EmployeeException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 	}
 }
