@@ -18,6 +18,7 @@ public static void main(String[] args) {
 	System.out.println("1. insert Employee");
 	System.out.println("2. print All Employee");
 	System.out.println("3. Search Employee by id");
+	System.out.println("4. delete Employee by id");
 	
 	System.out.println("Enter the choice");
 	int choice = input.nextInt();
@@ -29,6 +30,8 @@ public static void main(String[] args) {
 		pb.printAllEmployee();
 	}else if (choice == 3) {
 		pb.searchEmployee();
+	}else if (choice == 4) {
+		pb.deleteEmployee();
 	}
 	
 	

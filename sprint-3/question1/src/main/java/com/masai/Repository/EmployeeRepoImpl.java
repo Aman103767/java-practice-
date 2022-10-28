@@ -47,7 +47,17 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	@Override
 	public String deleteEmployeeDetailsById(int empId) {
 		// TODO Auto-generated method stub
-		return null;
+		String str = "Delete successfully";
+		EntityManager em = EMUtil.provideEM();
+	    Employee e = em.find(Employee.class, empId);
+	    em.getTransaction().begin();
+	    em.remove(e);
+	    em.getTransaction().commit();
+	    if(e == null) {
+	    	str = "null";
+	    }
+	    return str;
+	
 	}
 
 }

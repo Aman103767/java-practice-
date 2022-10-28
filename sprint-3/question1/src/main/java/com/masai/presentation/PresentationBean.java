@@ -46,4 +46,19 @@ public class PresentationBean {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void deleteEmployee() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the employee id ");
+		int id = input.nextInt();
+		try {
+			System.out.println(empService.deleteEmployeeById(id));
+		} catch (EmployeeException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	
 }

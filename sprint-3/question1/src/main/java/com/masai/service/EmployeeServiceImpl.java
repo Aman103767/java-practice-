@@ -42,7 +42,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public String deleteEmployeeById(int empId) throws EmployeeException {
 		// TODO Auto-generated method stub
-		return null;
+		EmployeeRepo er = new EmployeeRepoImpl();
+		String str = er.deleteEmployeeDetailsById(empId);
+		if(str.equals("null")) {
+			throw new EmployeeException("employee not found");
+		}
+		return str ;
+		
+		
 	}
 
 }
