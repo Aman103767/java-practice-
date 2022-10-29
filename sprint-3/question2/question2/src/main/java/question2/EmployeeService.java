@@ -1,43 +1,44 @@
 package question2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collector;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service(value = "a1")
+@Component(value = "a1")
 public class EmployeeService {
 
-	//@Autowired
-	//private Map<Department, Employee> theMap;
+	@Autowired
+	private Map<Department, Employee> theMap;
 	@Autowired
 	private List<Employee> theList;
+	
+	
+	
 	private String appName;
-	//@Bean
-//	public Map<Department,Employee> gettheMap(){
-//		Map<Department,Employee> map = new HashMap<>();
-//		map.put(new Department(1,"HR","gwalior"), new Employee(1,"Aman",2434234));
-//		map.put(new Department(1,"Marketing","Delhi"), new Employee(1,"Avinash",244234));
-//		map.put(new Department(1,"Account","Varanasi"), new Employee(1,"rohit",24484));
-//		return map;
-//	}
-	@Bean
-	public List<Employee> gettheList(){
-		List<Employee> list = new ArrayList<>();
-	    list.add( new Employee(1,"Aman",2434234));
-		list.add( new Employee(1,"Avinash",244234));
-		list.add( new Employee(1,"rohit",24484));
-		return list;
-	}
+
 	
 	public void printMap() {
+		 
+		 for( Entry<Department, Employee> m: theMap.entrySet()) {
+			 System.out.println(m.getKey()+" = "+ m.getValue());
+		 }
+	
 		
 	}
 	public void printList() {
+		Collections.sort(theList,(o1,o2)->(o1.getSalary()>o2.getSalary() ? 1 : -1));
+		theList.forEach(s-> System.out.println(s));
 		
 	}
 	public void printAppName() {
