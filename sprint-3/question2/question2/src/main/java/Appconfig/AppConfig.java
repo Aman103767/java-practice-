@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import question2.Department;
@@ -16,6 +17,7 @@ import question2.Employee;
 
 @Configuration
 @ComponentScan(basePackages = "question2")
+@PropertySource("a1.properties")
 public class AppConfig {
 	@Bean
 	public List<Employee> gettheList(){

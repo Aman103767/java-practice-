@@ -14,6 +14,7 @@ public static void main(String[] args) {
 	EmployeeService es= ac.getBean("a1",EmployeeService.class); 
 	es.printList();
 	es.printMap();
+	es.printAppName();
 	
 }
 }

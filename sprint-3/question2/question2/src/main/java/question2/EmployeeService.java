@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,8 @@ public class EmployeeService {
 	@Autowired
 	private List<Employee> theList;
 	
-	
+    @Autowired
+    Environment ev;
 	
 	private String appName;
 
@@ -42,7 +44,8 @@ public class EmployeeService {
 		
 	}
 	public void printAppName() {
-		
+		this.appName = ev.getProperty("appName");
+		System.out.println("AppName = "+appName);
 	}
 	@Override
 	public String toString() {
