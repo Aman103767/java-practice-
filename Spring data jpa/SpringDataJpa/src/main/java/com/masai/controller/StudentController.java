@@ -29,10 +29,10 @@ public class StudentController {
 		
 	}
 	@GetMapping("/Students/{roll}")
-	public ResponseEntity<Student> getStudentByRollHandler(@PathVariable Integer roll) throws StudentException{
+	public ResponseEntity<Student> getStudentByRollHandler(@PathVariable("roll") Integer roll) throws StudentException{
 		Student st = studentService.getStudentByRoll(roll);
 		
-		return new ResponseEntity<Student>(st,HttpStatus.CREATED);
+		return new ResponseEntity<Student>(st,HttpStatus.OK);
 	}
 	
 }
