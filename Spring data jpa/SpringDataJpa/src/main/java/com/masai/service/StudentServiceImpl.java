@@ -49,5 +49,18 @@ public class StudentServiceImpl implements StudentService {
 	
 	 return existingStudent;
 	}
+	@Override
+	public Student updateStudentDetails(Student student) throws StudentException {
+		// TODO Auto-generated method stub
+		Optional<Student> opt = dao.findById(student.getRoll());
+		if(opt.isPresent()) {
+			return dao.save(student);
+			
+			//here save method will perform as saveOrUpdate based on Id field
+		}
+		else {
+			throw new StudentException("Invalid Student details");
+		}
+	}
 
 }

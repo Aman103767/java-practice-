@@ -14,4 +14,6 @@ public interface StudentService {
 	public List<Student> getAllStudentDetails() throws StudentException;
 	
 	public Student deleteStudentByRoll(Integer roll)throws StudentException;
+	
+	public Student updateStudentDetails(Student student)throws StudentException;
 }
