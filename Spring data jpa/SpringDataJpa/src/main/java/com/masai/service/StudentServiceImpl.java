@@ -87,9 +87,13 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 	@Override
-	public StudentDTO getStudentNameAndMarksByRoll() throws StudentException {
+	public List<StudentDTO> getStudentNameAndMarks() throws StudentException {
 		// TODO Auto-generated method stub
-		return null;
+		List<StudentDTO> dto = dao.getStudentNameAndMarks();
+		if(dto.size()>0)
+			return dto;
+		else 
+			throw new StudentException("Student not found ");
 	}
 
 }

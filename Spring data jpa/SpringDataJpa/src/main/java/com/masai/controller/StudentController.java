@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.masai.model.StudentDTO;
 import com.masai.excepitons.StudentException;
 import com.masai.model.Student;
 import com.masai.service.StudentService;
@@ -76,6 +77,10 @@ public class StudentController {
 		return new ResponseEntity<List<Student>>(st,HttpStatus.OK);
 		
 	}
-	
+	@GetMapping("/getStudent2")
+	public List<StudentDTO> getStudentNameAndMarksByRollHandler() throws StudentException {
+		
+		return studentService.getStudentNameAndMarks();
+	}
 	
 }

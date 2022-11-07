@@ -14,6 +14,8 @@ public interface StudentDao extends JpaRepository<Student, Integer> {
   
 	public List<Student> findByName(String name);
 	
-	@Query("select new com.masai.model.StudentDTO(s.name,s.marks) from Student s where roll=?1")
-	public StudentDTO getStudentNameAndMarks(int roll);
+	@Query("select new com.masai.model.StudentDTO(s.name,s.marks) from Student s")
+	public List<StudentDTO> getStudentNameAndMarks();
+
+
 }

@@ -22,7 +22,7 @@ public interface StudentService {
 
     public List<Student> getStudentByName(String name)throws StudentException;
     
-    public StudentDTO getStudentNameAndMarksByRoll()throws StudentException;
+    public List<StudentDTO> getStudentNameAndMarks()throws StudentException;
 
 
 }
