@@ -49,7 +49,7 @@ public class StudentController {
 		Student student = studentService.deleteStudentByRoll(roll);
 	return new ResponseEntity<Student>(student,HttpStatus.OK);
 	}
-	@PutMapping("/student")
+	@PutMapping("/students")
 	public ResponseEntity<Student> updateStudentHandler(@RequestBody Student student) throws StudentException{
 		
 		Student st = studentService.updateStudentDetails(student);
