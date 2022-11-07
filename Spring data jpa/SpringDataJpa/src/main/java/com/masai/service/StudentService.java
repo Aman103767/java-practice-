@@ -16,4 +16,6 @@ public interface StudentService {
 	public Student deleteStudentByRoll(Integer roll)throws StudentException;
 	
 	public Student updateStudentDetails(Student student)throws StudentException;
+	
+	public Student updateStudentMarks(Integer roll,Integer graceMarks) throws StudentException;
 }
