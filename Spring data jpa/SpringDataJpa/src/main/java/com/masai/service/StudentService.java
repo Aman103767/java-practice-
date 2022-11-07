@@ -1,5 +1,9 @@
 package com.masai.service;
 
-public class StudentService {
+import com.masai.model.Student;
 
+public interface StudentService {
+
+	public Student saveStudent(Student student);
+	
 }
