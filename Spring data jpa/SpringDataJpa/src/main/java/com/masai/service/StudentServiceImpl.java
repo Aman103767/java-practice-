@@ -75,5 +75,15 @@ public class StudentServiceImpl implements StudentService {
 	    }
 	
 	}
+	@Override
+	public List<Student> getStudentByName(String name) throws StudentException {
+		// TODO Auto-generated method stub
+		List<Student> students = dao.findByName(name);
+		if(students.size()>0)
+			return students;
+		else
+			throw new StudentException("Student does not exist with Name "+ name); 
+		
+	}
 
 }

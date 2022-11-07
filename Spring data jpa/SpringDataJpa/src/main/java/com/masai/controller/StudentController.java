@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.excepitons.StudentException;
@@ -61,15 +62,18 @@ public class StudentController {
 		
 		
    }
-	@PutMapping("/students/{id}/{GM}")
-	public ResponseEntity<Student> updateStudentMarksHandler(@PathVariable("id") Integer Id , @PathVariable("GM") Integer gm) throws StudentException{
+	@PutMapping("/students/{id}")
+	public ResponseEntity<Student> updateStudentMarksHandler(@PathVariable("id") Integer Id , @RequestParam("gmarks") Integer gm) throws StudentException{
 		
 		Student st = studentService.updateStudentMarks(Id, gm);
 		
-		return new ResponseEntity<Student>(st,HttpStatus.OK);
+		return new ResponseEntity<Student>(st,HttpStatus.OK);	
+	}
+	@GetMapping("/getstudentbyname/{name}")
+	public ResponseEntity<List<Student>> getStudentByNameHandler(@PathVariable("name") String name) throws StudentException{
+		List<Student> st = studentService.getStudentByName(name);
 		
-		
-		
+		return new ResponseEntity<List<Student>>(st,HttpStatus.OK);
 		
 	}
 	

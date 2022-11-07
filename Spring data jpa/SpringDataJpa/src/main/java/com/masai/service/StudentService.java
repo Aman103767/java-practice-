@@ -18,4 +18,10 @@ public interface StudentService {
 	public Student updateStudentDetails(Student student)throws StudentException;
 	
 	public Student updateStudentMarks(Integer roll,Integer graceMarks) throws StudentException;
+
+    public List<Student> getStudentByName(String name)throws StudentException;
+    
+    public StudentDTO getStudentNameAndMarksByRoll()throws StudentException;
+
+
 }
