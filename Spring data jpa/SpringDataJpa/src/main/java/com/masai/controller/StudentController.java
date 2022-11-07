@@ -1,5 +1,7 @@
 package com.masai.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +35,11 @@ public class StudentController {
 		Student st = studentService.getStudentByRoll(roll);
 		
 		return new ResponseEntity<Student>(st,HttpStatus.OK);
+	}
+	@GetMapping("/students")
+	public ResponseEntity<List<Student>> getAllStudentDetailsHandler() throws StudentException{
+		List<Student> students = studentService.getAllStudentDetails();
+		return new ResponseEntity<List<Student>>(students,HttpStatus.OK);
 	}
 	
 }

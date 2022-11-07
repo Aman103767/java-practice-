@@ -1,6 +1,7 @@
 package com.masai.service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,16 @@ public class StudentServiceImpl implements StudentService {
 //			throw new StudentException("Student does not exist with roll :"+ roll);
 //		}
 		return opt.orElseThrow(()-> new StudentException("Student does not exist with Roll :"+roll));	
+	}
+	@Override
+	public List<Student> getAllStudentDetails() throws StudentException {
+		// TODO Auto-generated method stub
+         List<Student> students =dao.findAll();
+         if(students.size() > 0) {
+        	 return students;
+         }else
+        	 throw new StudentException("No student found");
+
 	}
 
 }
