@@ -12,4 +12,6 @@ public interface StudentService {
 	public Student getStudentByRoll(Integer roll) throws StudentException;
 	
 	public List<Student> getAllStudentDetails() throws StudentException;
+	
+	public Student deleteStudentByRoll(Integer roll)throws StudentException;
 }

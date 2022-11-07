@@ -41,5 +41,13 @@ public class StudentServiceImpl implements StudentService {
         	 throw new StudentException("No student found");
 
 	}
+	@Override
+	public Student deleteStudentByRoll(Integer roll) throws StudentException {
+		// TODO Auto-generated method stub
+	Student existingStudent =	dao.findById(roll).orElseThrow(()-> new StudentException("Student not found"));
+		dao.delete(existingStudent);
+	
+	 return existingStudent;
+	}
 
 }
