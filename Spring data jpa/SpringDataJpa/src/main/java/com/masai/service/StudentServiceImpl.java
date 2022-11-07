@@ -62,5 +62,18 @@ public class StudentServiceImpl implements StudentService {
 			throw new StudentException("Invalid Student details");
 		}
 	}
+	@Override
+	public Student updateStudentMarks(Integer roll, Integer graceMarks) throws StudentException {
+		// TODO Auto-generated method stub
+		Optional<Student> opt = dao.findById(roll);
+	    if(opt.isPresent()) {
+	    	Student es = opt.get();
+	        es.setMarks(es.getMarks()+ graceMarks);
+	        return dao.save(es);
+	    }else {
+	    	throw new StudentException("Student not exist with Roll : "+ roll);
+	    }
+	
+	}
 
 }
