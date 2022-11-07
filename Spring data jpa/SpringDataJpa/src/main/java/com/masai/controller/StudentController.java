@@ -25,6 +25,6 @@ public class StudentController {
 		return new ResponseEntity<Student>(savedStudent,HttpStatus.CREATED);
 		
 	}
-	
+	public ReposeEntity<Student> getStudentByRollHandler(int)
 	
 }
