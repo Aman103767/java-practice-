@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.masai.excepitons.StudentException;
 import com.masai.model.Student;
+import com.masai.model.StudentDTO;
 
 public interface StudentService {
 

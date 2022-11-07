@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.masai.excepitons.StudentException;
 import com.masai.model.Student;
+import com.masai.model.StudentDTO;
 import com.masai.repository.StudentDao;
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -84,6 +85,11 @@ public class StudentServiceImpl implements StudentService {
 		else
 			throw new StudentException("Student does not exist with Name "+ name); 
 		
+	}
+	@Override
+	public StudentDTO getStudentNameAndMarksByRoll() throws StudentException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
