@@ -28,7 +28,7 @@ public class StudentController {
 		return new ResponseEntity<Student>(savedStudent,HttpStatus.CREATED);
 		
 	}
-	@GetMapping("/Students/{roll}")
+	@GetMapping("/students/{roll}")
 	public ResponseEntity<Student> getStudentByRollHandler(@PathVariable("roll") Integer roll) throws StudentException{
 		Student st = studentService.getStudentByRoll(roll);
 		
