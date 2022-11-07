@@ -32,23 +32,27 @@ public class StudentController {
 		return new ResponseEntity<Student>(savedStudent,HttpStatus.CREATED);
 		
 	}
+	
 	@GetMapping("/students/{roll}")
 	public ResponseEntity<Student> getStudentByRollHandler(@PathVariable("roll") Integer roll) throws StudentException{
 		Student st = studentService.getStudentByRoll(roll);
 		
 		return new ResponseEntity<Student>(st,HttpStatus.OK);
 	}
+	
 	@GetMapping("/students")
 	public ResponseEntity<List<Student>> getAllStudentDetailsHandler() throws StudentException{
 		List<Student> students = studentService.getAllStudentDetails();
 		return new ResponseEntity<List<Student>>(students,HttpStatus.OK);
 	}
+	
 	@DeleteMapping("/students/{roll}")
 	public ResponseEntity<Student> deleleStudentByRoll(@PathVariable("roll") Integer roll) throws StudentException{
 		
 		Student student = studentService.deleteStudentByRoll(roll);
 	return new ResponseEntity<Student>(student,HttpStatus.OK);
 	}
+	
 	@PutMapping("/students")
 	public ResponseEntity<Student> updateStudentHandler(@RequestBody Student student) throws StudentException{
 		
@@ -56,6 +60,18 @@ public class StudentController {
 		return new ResponseEntity<Student>(st,HttpStatus.OK);
 		
 		
+   }
+	@PutMapping("/students/{id}/{GM}")
+	public ResponseEntity<Student> updateStudentMarksHandler(@PathVariable("id") Integer Id , @PathVariable("GM") Integer gm) throws StudentException{
+		
+		Student st = studentService.updateStudentMarks(Id, gm);
+		
+		return new ResponseEntity<Student>(st,HttpStatus.OK);
+		
+		
+		
+		
 	}
+	
 	
 }
