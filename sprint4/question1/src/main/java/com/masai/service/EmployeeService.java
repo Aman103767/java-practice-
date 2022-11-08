@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.masai.Exception.EmployeeException;
 import com.masai.model.Employee;
+import com.masai.model.EmployeeDTO;
 
 public interface EmployeeService {
 	
