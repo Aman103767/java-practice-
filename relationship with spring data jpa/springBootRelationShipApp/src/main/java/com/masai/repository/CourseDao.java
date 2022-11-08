@@ -17,7 +17,7 @@ public interface CourseDao extends JpaRepository<Course, Integer>  {
  
    @Query("from Course where courseName = ?1")
    public Course getCourseByCname(String cname);
-   @Query("Select students from Course   where courseName=?1")
+   @Query("Select c.students from Course  c where c.courseName=?1")
    public Set<Student> getStudentsByCname(String cname);
  
  
