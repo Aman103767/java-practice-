@@ -37,4 +37,11 @@ public class GlobalException {
 		
 		return new  ResponseEntity<MyErrorDetails>(ed,HttpStatus.BAD_REQUEST);
 	}
+	@ExceptionHandler(CourseException.class)
+	public ResponseEntity<MyErrorDetails> EmployeeExcepitonHandler(CourseException ee , WebRequest wr){
+		
+		MyErrorDetails ed = new MyErrorDetails(LocalDate.now(),ee.getMessage(),wr.getDescription(false));
+		
+		return new  ResponseEntity<MyErrorDetails>(ed,HttpStatus.BAD_REQUEST);
+	}
 }
