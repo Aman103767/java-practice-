@@ -1,11 +1,12 @@
 package com.masai.service;
 
+import com.masai.exception.StudentException;
 import com.masai.model.Student;
 
-public class StudentService {
+public interface StudentService {
 
 	
-public Student registerStudentInCourse(String cname, Student student) throws StudentException{
+public Student registerStudentInCourse(String cname, Student student) throws StudentException;
 		
-	}
+	
 }
