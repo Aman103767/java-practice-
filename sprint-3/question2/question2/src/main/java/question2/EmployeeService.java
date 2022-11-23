@@ -46,6 +46,7 @@ public class EmployeeService {
 	public void printAppName() {
 		this.appName = ev.getProperty("appName");
 		System.out.println("AppName = "+appName);
+	   
 	}
 	@Override
 	public String toString() {

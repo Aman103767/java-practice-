@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "st" class ="com.masai.bean.Student">
+
+<constructor-arg value = "10"></constructor-arg>
+<constructor-arg value = "aman Sharma"></constructor-arg>
+<constructor-arg value = "600"></constructor-arg>
+
+
+</bean>
+<bean id = "collage" class = "com.masai.bean.Collage" >
+<property name="Collage_name" value = "MITs"></property>
+<property name="student" ref = "student"></property>
+<property name = "collage_address" value = "thatipur"></property>
+</bean>
+
+
+</beans>
