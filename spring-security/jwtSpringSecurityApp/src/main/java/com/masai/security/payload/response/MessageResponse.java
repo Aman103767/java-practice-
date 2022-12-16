@@ -1,9 +1,5 @@
 package com.masai.security.payload.response;
 
-import java.util.List;
-
-import com.masai.security.model.Role;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponse {
+public class MessageResponse {
 	
-	
-	private Long id;
-	private String username;
-	private String email;
-	private List<Role> roles;
+	private String message;
 	
 	
 
