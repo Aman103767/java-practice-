@@ -1,6 +1,7 @@
 package com.masai.security.model;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -20,53 +21,16 @@ import lombok.NoArgsConstructor;
 @Entity
 
 @Table(name = "users")
+@Data
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Set<Role> getRoles() {
-		return roles;
-	}
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public User(Integer id, String username, String password, String email, Set<Role> roles) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.roles = roles;
-	}
+
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	
 	private String username;
 	private String password;
@@ -76,4 +40,20 @@ public class User {
 	          joinColumns = @JoinColumn(name ="user_id"),
 	          inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(email, other.email) && Objects.equals(id, other.id)
+				&& Objects.equals(password, other.password) && Objects.equals(username, other.username);
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, id, password, username);
+	}
 }
