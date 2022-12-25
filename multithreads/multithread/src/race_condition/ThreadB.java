@@ -2,16 +2,16 @@ package race_condition;
 
 
 
-public class ThreadA implements Runnable {
+public class ThreadB implements Runnable {
 	
   Common c ;
   String name;
 @Override
-public void run() {
+   public void run() {
 	// TODO Auto-generated method stub
-c.fun1(name);
+     c.fun1(name);
 	
-}
+   }
  
   
 
