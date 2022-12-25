@@ -3,6 +3,9 @@ package com.masai.security.security.jwt;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseCookie;
+
+import com.masai.security.service.UserDetailsImpl;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -19,6 +22,20 @@ public class JwtUtils {
 	private int jwtExpirationMs;
 	@Value("${masai.app.jwtCookieName}")
 	private String jwtCookie;
+	
+	public ResponseCookie generateJwtCookie(UserDetailsImpl userDetails) {
+		String jwt = generateTokenFromUsername(userDetails.getUsername());
+		ResponseCookie.from(jwtCookie, jwt).path("/api").maxAge(24*60*60).httpOnly(true).build();
+	}
+	
+	
+	// to get username from the token
+	public String getUsernameFromJwtToken(String token) {
+		
+		return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
+		
+	}
+	
 	
 	// to validate JWT token
 	public boolean validateJwtToken(String authToken) {
