@@ -8,7 +8,6 @@ public class AThread extends Thread {
 			System.out.println(Thread.currentThread().getName()+" "+i);
 		
 	}
-		
 	}
 
 }
