@@ -8,7 +8,6 @@ public class Main {
 		Thread thread = new Thread(threadb);
 		thread.start();
 		Thread thread1 = new Thread(threadb);
-		
 		thread1.start();
 	
 	
