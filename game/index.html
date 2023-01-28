@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Simple Memory Card Game</title>
+  <style>
+    body {
+      background-color: #272727;
+    }
+    .card {
+      width: 150px;
+      height: 150px;
+      background-color: #CCC;
+      border-radius: 10px;
+      margin: 10px;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div id="gameboard">
+  </div>
+  <script>
+    // create an array of images
+    const imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
+    // randomly assign images to cards
+    let cardArray = [];
+    imageArray.forEach(img => {
+      let card = {
+        img: img,
+        flipped: false,
+        matched: false
+      };
+      cardArray.push(card);
+      cardArray.push({ ...card });
+    });
+    //shuffle the cards
+    cardArray.sort(() => 0.5 - Math.random());
+    //render cards to the page
+    cardArray.forEach(card => {
+      let cardElement = document.createElement("div");
+      cardElement.classList.add("card");
+      cardElement.dataset.name = card.img;
+      cardElement.addEventListener("click", flipCard);
+      gameboard.append(cardElement);
+    });
+    //flip card function
+    function flipCard() {
+      let card = this;
+      card.style.background = `url('./${card.dataset.name}')`;
+    }
+  </script>
+</body>
+</html>

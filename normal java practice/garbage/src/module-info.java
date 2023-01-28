@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author asus
+ *
+ */
+module garbage {
+}
